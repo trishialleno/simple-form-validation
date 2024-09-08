@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Form Validation</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+        <link rel="stylesheet" href="/resources/demos/style.css">
+        <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+        <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+        <script>
+            $(document).ready(function(){
+                $("#datepicker").datepicker();
+                $("button").click(function(){
+                let firstname = $("#txtfname").val();
+                let lastname = $("#txtlname").val();
+                let date = $("#datepicker").val();
+                    if(firstname === ""){
+                    alert("First name cannot be blank.");
+                    } else if(lastname === ""){
+                    alert("Last name cannot be blank.");
+                    } else if(date === ""){
+                    alert("Date cannot be blank.");
+                    } else {
+                    alert("Success, " + firstname + " " + lastname + "! Your vaccination is reserved on " + date + ".");
+                    }
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <header>
+            <h1>Scheduling Form for Vaccination</h1>
+        </header>
+        <form>
+            <div>
+                <label for="txtfname">First Name:</label>
+                <input type="text" id="txtfname">
+            </div>
+            <div>
+                <label for="txtlname">Last Name:</label>
+                <input type="text" id="txtlname">
+            </div>
+            <div>
+                <label for="date">Preferred Date:</label>
+                <input type="text" id="datepicker">
+            </div>
+            <button>Reserve</button>
+        </form>
+    </body>
+</html>
